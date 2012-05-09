@@ -1,0 +1,35 @@
+#Goal: 
+1. Whether a person is Indoor/Outdoor
+2. What is the actual place (home/office/restaurant) the person is in.
+
+Possible Sensors
+1. GPS
+2. Wi-Fi 
+3. Accelerometer
+
+Possible Signals
+1. GPS fix
+2. Indoor GPS fix will take a longer time
+3. Indoor Wi-Fi will be visible
+4. Signal strength/ number of satellites used for the fix
+5. Accelerometers
+
+Algorithm: Will try to make use of a combination of these sensors to figure out if the person is indoor/outdoor
+
+
+PseudoCode:
+prevTime = 0;
+currLoc = '';
+currAct = '';
+
+if( currTime - prevTime > 3000 )
+{
+	a. If we did not get a GPS fix, likely indoors.
+	b. Check accelerometer data
+		if (var(acceleration) < threshold) 
+			currAct = still;
+		else
+			currAct = moving;
+		end
+		
+        c. 
